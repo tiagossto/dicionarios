@@ -1,0 +1,230 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{ebgaramond} % Fonte Clássica
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{ifthen}
+\usepackage{tocloft} % Pacote para personalizar o índice
+
+
+% Margens
+\geometry{top=2.5cm, bottom=2.5cm, left=3cm, right=3cm}
+
+% Remove numeração e indentação
+\setlength{\parindent}{0pt}
+
+% --- configurações do índice ---
+\renewcommand{\contentsname}{}
+\renewcommand{\cftdotsep}{\cftnodots}
+\tocloftpagestyle{empty}
+
+% --- comando para letra inicial ---
+\newcommand{\letra}[1]{
+  \newpage
+  \addcontentsline{toc}{section}{#1}
+  \vspace*{2cm}
+  \raggedleft
+  \textbf{\fontsize{72}{80}\selectfont #1}
+  \par\vspace{1cm}
+}
+
+
+% --- COMANDO AJUSTADO ---
+\newcommand{\entry}[5]{%
+    \addcontentsline{toc}{subsection}{#1}
+    \noindent
+    \begin{minipage}{\textwidth} % Garante que o verbete não parte a meio
+      \raggedright 
+      % Título Gigante
+      {\fontsize{30}{38}\selectfont \textbf{#1}\par}
+
+      \vspace{0.7cm} % MAIOR ESPAÇAMENTO (Título -> Pronúncia)
+
+      {\large [ #1 ] \textbf{\textit{#2}}  -  #3 \par}
+      \rule{\textwidth}{0.4pt}
+      {\large \setstretch{1.1} #4\\ #5 \par}
+    \end{minipage}
+    \vspace{1.5cm} % Espaço entre os diferentes verbetes
+}
+
+\begin{document}
+
+\begin{titlepage}
+  \centering 
+  \vspace*{\fill} 
+
+  {\fontsize{70}{80}\selectfont \textbf{dicionário}\par}
+  \vspace{0.2cm}
+  {\fontsize{40}{50}\selectfont \textbf{de um algarvie}\par}
+
+  \vspace{1.5cm}
+
+  {\Large [ al.gar.'vju ] \textbf{\textit{classe}} - \textbf{Algarvie}\par}
+
+  \vspace{0.5cm}
+  \rule{0.8\textwidth}{0.5pt}
+  \vspace{0.8cm}
+
+  \begin{minipage}{0.8\textwidth}
+    \centering \Large \setstretch{1.3}
+    compilação de termos, dizeres e pronuncias típicas do algarve, recolhidas por vítor madeira. já com o 'nove acorde ortográfique'.
+  \end{minipage}
+\end{titlepage}
+
+
+% --- ÍNDICE ---
+\pagestyle{empty} 
+\tableofcontents
+\thispagestyle{empty} 
+\newpage
+
+% --- INÍCIO DO CONTEÚDO ---
+\pagestyle{plain} 
+\setcounter{page}{0} 
+
+% --- LISTA DE TERMOS ---
+
+\letra{a}
+\entry{abuscar}{verbo}{Algarvie}
+{buscar; procurar.}
+{\textbf{ex.} us cãs foram abuscar os coelhes no mê do mate}
+
+\entry{acarditar}{verbo}{Algarvie}
+{acreditar.}
+{\textbf{ex.} moce, até parace que n'acarditas em mim}
+
+\entry{acêfa}{substantivo}{Algarvie}
+{ceifa. trabalho agrícola de corte de cereais.}
+{}
+
+\letra{b}
+\entry{barreca}{substantivo}{Algarvie}
+{barraca.}
+{prontes, já tá a barreca armada}
+
+\entry{batenêra}{substantivo}{Algarvie}
+{betoneira; máquina de fazer betão.}
+{\textbf{ex.} moss, liga a batenêra}
+
+\entry{bnite}{adjetivo}
+{bonito. pronúncia com elisão da vogal 'o'.}
+{}
+
+\entry{bucha}{substantivo}{Algarvie}
+{almoço; merenda ou lanche.}
+{\textbf{ex.} iste já tá na hora da bucha}
+
+\entry{buftada}{substantivo}{Algarvie}
+{chapada; bofetada.}
+{\textbf{ex.} tás aqui, tás a levar uma buftada}
+
+\letra{c}
+\entry{cabele}{substantivo}{Algarvie}
+{cabelo.}
+{\textbf{ex.} cortê o cabele ontem}
+
+\entry{cagade}{adjetivo}{Algarvie}
+{sujo; sortudo (dependendo do contexto); falhado.}
+{}
+
+\entry{cagorre}{substantivo}{Algarvie}
+{susto.}
+{\textbf{ex.} aquele maldeçoade amandou-me um cagorre c'até vi luzes}
+
+\entry{caguifa}{substantivo}{Algarvie}
+{medo.}
+{\textbf{ex.} de nôte tenh'uma caguifa, mas de dia na tenhe}
+
+\entry{calcaire}{substantivo}{Algarvie}
+{calcário. rocha sedimentar comum no algarve.}
+{}
+
+\entry{contrebute}{substantivo}{Algarvie}
+{contributo.}
+{\textbf{ex.} dê o mê contrebute prá festa}
+
+\entry{cornes}{substantivo}{Algarvie}
+{cornos; testa; cabeça.}
+{\textbf{ex.} u cagade tem a mania de marcar gôles c'us cornes}
+
+\letra{e}
+\entry{espetácl}{substantivo}{Algarvie}
+{espetáculo.}
+{\textbf{ex.} foi um espetácl de festa}
+
+\letra{f}
+\entry{faz-avôr}{expressão}{Algarvie}
+{se faz favor; por favor.}
+{\textbf{ex.} cumadre, dêm'aí o guidal, faz-avôr}
+
+\entry{fêjão carite}{substantivo}{Algarvie}
+{feijão-frade.}
+{\textbf{ex.} goste munte duma saladinha com fêjão carite}
+
+\letra{l}
+\entry{ladêra}{substantivo}{Algarvie}
+{ladeira; descida acentuada.}
+{\textbf{ex.} tem cuidade a descer a ladêra pra na caíres}
+
+\entry{lagues}{topónimo}{Algarvie}
+{lagos (cidade algarvia).}
+{}
+
+\entry{lariar a pevide}{expressão}{Algarvie}
+{vadiar; passear sem fazer nada útil.}
+{\textbf{ex.} o manel anda a lariar a pevide}
+
+\entry{luzescús}{substantivo}{Algarvie}
+{pirilampos.}
+{\textbf{ex.} esta nôte tá tude chê de luzescús}
+
+\letra{m}
+\entry{macheia}{substantivo}{Algarvie}
+{mão-cheia; grande quantidade.}
+{\textbf{ex.} hoje vi uma macheia de combois}
+
+\entry{melanças}{substantivo}{Algarvie}
+{melancias (geralmente usado no plural).}
+{\textbf{ex.} na tem aí adube prás melanças?}
+
+\entry{miga}{substantivo}{Algarvie}
+{abreviação de amiga/amigo em contexto muito familiar.}
+{\textbf{ex.} miga, passa-me o pão}
+
+\letra{o}
+\entry{ora ora}{interjeição}{Algarvie}
+{expressão de perplexidade ou indignação.}
+{\textbf{ex.} ora ora, vejem bem este linde service!}
+
+\letra{p}
+\entry{panite}{substantivo}{Algarvie}
+{um pão pequeno; papo-seco.}
+{}
+
+\entry{porrete}{substantivo}{Algarvie}
+{copo de vinho, seguido de outro.}
+{\textbf{ex.} bebeu um porrete e foi-se}
+
+\entry{pu diéb}{interjeição}{Algarvie}
+{expressão de que cheira mal (ao diabo).}
+{\textbf{ex.} pu diéb, quem foi o maldeçoade?}
+
+\entry{pugrama}{substantivo}{Algarvie}
+{programa.}
+{\textbf{ex.} viste o pugrama da festa?}
+
+\letra{s}
+\entry{seca-adegas}{adjetivo}{Algarvie}
+{bêbado; borrachão; alguém que bebe o vinho todo.}
+{}
+
+\entry{service}{substantivo}{Algarvie}
+{serviço.}
+{\textbf{ex.} que belo service me saíste}
+
+\entry{sopape}{substantivo}{Algarvie}
+{sopapo; tabefe; chapada forte.}
+{}
+
+\end{document}

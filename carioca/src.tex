@@ -1,0 +1,264 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{ebgaramond} % Fonte Clássica
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{ifthen}
+\usepackage{tocloft} % Pacote para personalizar o índice
+
+
+% Margens
+\geometry{top=2.5cm, bottom=2.5cm, left=3cm, right=3cm}
+
+% Remove numeração e indentação
+\setlength{\parindent}{0pt}
+
+% --- configurações do índice ---
+\renewcommand{\contentsname}{}
+\renewcommand{\cftdotsep}{\cftnodots}
+\tocloftpagestyle{empty}
+
+% --- comando para letra inicial ---
+\newcommand{\letra}[1]{
+  \newpage
+  \addcontentsline{toc}{section}{#1}
+  \vspace*{2cm}
+  \raggedleft
+  \textbf{\fontsize{72}{80}\selectfont #1}
+  \par\vspace{1cm}
+}
+
+
+% --- COMANDO AJUSTADO ---
+\newcommand{\entry}[5]{%
+    \addcontentsline{toc}{subsection}{#1}
+    \noindent
+    \begin{minipage}{\textwidth} % Garante que o verbete não parte a meio
+      \raggedright 
+      % Título Gigante
+      {\fontsize{30}{38}\selectfont \textbf{#1}\par}
+
+      \vspace{0.7cm} % MAIOR ESPAÇAMENTO (Título -> Pronúncia)
+
+      {\large [ #1 ] \textbf{\textit{#2}}  -  #3 \par}
+      \rule{\textwidth}{0.4pt}
+      {\large \setstretch{1.1} #4\\ #5 \par}
+    \end{minipage}
+    \vspace{1.5cm} % Espaço entre os diferentes verbetes
+}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering % Centraliza tudo horizontalmente
+    \vspace*{\fill} % Empurra para o centro vertical
+    
+    % 1. Conceito (Título)
+    {\fontsize{70}{80}\selectfont \textbf{dicionário}\par}
+    \vspace{0.2cm}
+    {\fontsize{40}{50}\selectfont \textbf{para um Tuga}\par}
+    
+    \vspace{1.5cm}
+    
+    % 2. [ pronuncia ] tipo • Língua
+    {\Large [ pronuncia ] \textbf{\textit{classe}}  -  Carioca\par}
+    \vspace{0.5cm}
+    
+    % 3. Linha Horizontal
+    \rule{0.8\textwidth}{0.5pt}
+    
+    \vspace{0.8cm}
+    
+    % 4. Definição do Dicionário
+    \begin{minipage}{0.8\textwidth}
+        \centering \Large \setstretch{1.3}
+        compilação essencial de gírias, expressões e modos de falar do rio de janeiro, traduzidas e explicadas para o entendimento do tuga.
+    \end{minipage}
+    
+    \vspace*{\fill} % Empurra para o centro vertical
+\end{titlepage}
+
+
+% --- LISTA DE PALAVRAS ---
+\pagestyle{empty} %
+\tableofcontents
+\newpage
+
+\pagestyle{plain} % Ativa a numeração no rodapé
+\setcounter{page}{0}
+
+\letra{0}
+\entry{0800}{adjetivo}{Carioca}
+{gratuito; de borla; que não custa dinheiro.}
+{\textbf{ex.} o concerto será 0800.}
+
+\letra{a}
+\entry{a porra toda}{subst. composto}{Carioca}
+{tudo; a totalidade das coisas, com eventual conotação agressiva. 'partimos a porra toda'.}
+
+\entry{aê}{interjeição}{Carioca}
+{partícula para iniciar uma frase; advérbio de lugar: ali; por lá.}
+
+\entry{arroz}{substantivo}{Carioca}
+{pessoa que apenas acompanha; indivíduo que vive rodeado de atrações mas nunca se envolve. sinónimos: arame-liso, mestre-sala.}
+
+\letra{b}
+\entry{beleza}{substantivo}{Carioca}
+{cumprimento: 'tudo bem?'; aceitação: 'está bem'; exaltação: 'que espetáculo!'.}
+
+\entry{boiola}{substantivo}{Carioca}
+{homossexual masculino; paneleiro; maricas.}
+
+\entry{bolado}{adjetivo}{Carioca}
+{preocupado; confuso; com incompreensão momentânea.}
+
+\entry{brotar}{verbo}{Carioca}
+{aparecer num lugar; chegar de repente.}
+
+\entry{bucha}{substantivo}{Carioca}
+{pessoa que se arma em esperta ('malandro'), mas falha; 'prego'.}
+
+\letra{c}
+\entry{cabaço}{adjetivo}{Carioca}
+{pessoa trapalhona; que faz asneiras.}
+
+\entry{caído}{adjetivo}{Carioca}
+{evento pouco divertido ou desanimado; pessoa pouco atraente.}
+
+\entry{caô}{substantivo}{Carioca}
+{mentira; treta; peta; história mal contada.}
+
+\entry{caraca}{interjeição}{Carioca}
+{expressão de surpresa ou espanto; versão suave de asneira.}
+
+\entry{coé}{interjeição}{Carioca}
+{aglutinação de 'qual é'; cumprimento, confrontação ou dúvida.}
+
+\entry{conto}{substantivo}{Carioca}
+{unidade monetária (dinheiro); ex: 10 conto (10 reais/euros).}
+
+\entry{cria}{substantivo}{Carioca}
+{pessoa autêntica; nascida e criada na comunidade; 'da casa'.}
+
+\letra{d}
+\entry{dá uma moral}{expressão}{Carioca}
+{pedir auxílio ou ajuda; negociar uma pequena vantagem.}
+
+\entry{dar o papo}{expressão}{Carioca}
+{falar a verdade; ser direto; avisar sobre algo importante.}
+
+\letra{f}
+\entry{filhadaputa}{interj. / adjetivo}{Carioca}
+{expressão de descontentamento; adjetivo usado para ofender.}
+
+\entry{fluir}{verbo}{Carioca}
+{dar certo; correr bem.}
+
+\entry{foda}{adjetivo}{Carioca}
+{difícil ('lixado'); muito bom ('brutal'); impressionante.}
+
+\entry{fura-olho}{substantivo}{Carioca}
+{indivíduo que usufrui das glórias alheias; traidor em relações.}
+
+\letra{g}
+\entry{gastar}{verbo}{Carioca}
+{gozar com a cara de alguém; brincar.}
+
+\entry{geral}{substantivo}{Carioca}
+{toda a gente; a malta toda.}
+
+\entry{goxtosa}{adjetivo}{Carioca}
+{mulher de formas físicas harmoniosas; 'boazona'.}
+
+\letra{i}
+\entry{irado}{adjetivo}{Carioca}
+{espetacular; muito bom; brutal.}
+
+\letra{j}
+\entry{já é!}{interjeição}{Carioca}
+{concordância; sinónimo: siga, bora.}
+
+\letra{m}
+\entry{maluco}{substantivo}{Carioca}
+{gajo; sujeito; indivíduo.}
+
+\entry{maneiro}{adjetivo}{Carioca}
+{muito fixe; espetacular.}
+
+\entry{mermão}{substantivo}{Carioca}
+{aglutinação de 'meu irmão'; usado para dirigir-se a qualquer pessoa.}
+
+\entry{meter o pé}{expressão}{Carioca}
+{ir embora rapidamente; bazar.}
+
+\entry{mó}{advérbio}{Carioca}
+{aglutinação de 'maior'; muito. ex: 'mó otário' (grande otário).}
+
+\entry{muleque}{substantivo}{Carioca}
+{rapaz; miúdo; amigo (usado para homens adultos).}
+
+\letra{n}
+\entry{na mão do palhaço}{expressão}{Carioca}
+{estado de pessoas entorpecidas; bêbado.}
+
+\entry{nego}{pronome}{Carioca}
+{substitui 'eles' ou 'alguém'; verbo concorda no singular.}
+
+\entry{night}{substantivo}{Carioca}
+{saída à noite; diversão noturna.}
+
+\letra{p}
+\entry{papo reto}{expressão}{Carioca}
+{conversa séria; falar sem rodeios.}
+
+\entry{parada}{substantivo}{Carioca}
+{coisa genérica; 'cena'.}
+
+\entry{paraíba}{substantivo}{Carioca}
+{indivíduo do nordeste do brasil (pejorativo no rio); associado a 'saloio'.}
+
+\entry{partiu}{interjeição}{Carioca}
+{vamos? (pergunta); siga! (afirmação de início de ação).}
+
+\entry{pega a visão}{expressão}{Carioca}
+{toma nota; percebe isto; abre a pestana.}
+
+\entry{peidão}{adjetivo}{Carioca}
+{cobarde; frouxo.}
+
+\entry{pela-saco}{substantivo}{Carioca}
+{pessoa chata; graxista; lambe-botas.}
+
+\entry{perdeu a linha}{expressão}{Carioca}
+{cometeu um ato insensato; 'passou-se'.}
+
+\entry{porra}{interjeição}{Carioca}
+{espanto ou raiva; 'cena'; intensidade ('frio da porra').}
+
+\entry{porrada}{substantivo}{Carioca}
+{pancadaria; grande quantidade ('uma porrada de gente').}
+
+\letra{s}
+\entry{se liga}{expressão}{Carioca}
+{apelo por atenção; 'está atento'.}
+
+\entry{sinistro}{adjetivo}{Carioca}
+{brutal; muito bom; difícil; perigoso.}
+
+\letra{t}
+\entry{tamo junto}{expressão}{Carioca}
+{estamos juntos; conta comigo.}
+
+\entry{tu}{pronome}{Carioca}
+{tu; no rio, seguido por verbo na 3ª pessoa ('tu vai').}
+
+\letra{v}
+\entry{vacilão}{adjetivo}{Carioca}
+{pessoa que falha; lento a perceber as coisas.}
+
+\letra{x}
+\entry{x-9}{substantivo}{Carioca}
+{delator; bufo; chibo.}
+
+\end{document}
