@@ -34,4 +34,4 @@ clean: $(CLEAN_TARGETS)
 # This allows "make clean-carioca", "make clean-algarvio", etc.
 $(CLEAN_TARGETS): clean-%:
 	@echo "Cleaning specific dictionary: $*..."
-	-cd $* && latexmk -C -jobname=dic src.tex
+	-cd $* && latexmk -C -jobname=dic -jobname=src src.tex
