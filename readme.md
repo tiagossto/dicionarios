@@ -1,6 +1,6 @@
 # dicionarios
 
-Dicionários em Latex.
+Dicionários em Latex. Apenas de dialetos por agora.
 
 ## lista de dicionários
 
