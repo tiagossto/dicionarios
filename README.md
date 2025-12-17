@@ -1,0 +1,2 @@
+# dicionarios
+Dicionários em Latex.
